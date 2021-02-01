@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <form>
+            <h3>도서 구입 요청</h3>
+            도서명 : <input type="text" list="book" />
+            <datalist id="book">
+                <option value="멀티미디어배움터" label="30,000"/>
+                <option value="인터넷배움터" label="34,000"/>
+                <option value="컴퓨터와 IT 기술의 이해" label="28,000"/>
+            </datalist>
+
+            <p>선호도 : 1 <input type="range" min="1" max="5" value="3" /> 5 </p>
+            <p>가격 : <input type="number" name="price" min="0" step="100" value="10000"/>원</p>
+            <p>권수 : <input type="number" name="num" min="0" step="1" value="0"> 권</p>
+            <p> <input type="submit" value="구입"/></p>
+        </form>
+    </body>
+</html>
