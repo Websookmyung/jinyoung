@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>주문 페이지</title>
+  </head>
+
+  <body class="order">
+    <div class="head">서적 주문 형식</div>
+    <form action="index.html" >
+      <p>주문서</p>
+      <table>
+        <tr>
+          <th>앨범 제목</th> <th>가격</th> <th>수량</th> <th>합계</th>
+        </tr>
+        <tr>
+          <td>Regular</td> <td>19,000원</td>
+          <td> <input type="text" size="2" value="0"></td>
+          <td> <input type="text" size="6" value="0">원</td>
+        </tr>
+        <tr>
+          <td>Resonance</td> <td>23,000원</td>
+          <td> <input type="text" size="2" value="0"></td>
+          <td> <input type="text" size="6" value="0">원</td>
+        </tr>
+        <tr>
+          <td>마지막 첫사랑</td> <td>17,000원</td>
+          <td> <input type="text" size="2" value="0"></td>
+          <td> <input type="text" size="6" value="0">원</td>
+        </tr>
+      </table> <br>
+      <input type="button" value="합계계산" disabled>
+      <input type="reset" value="초기화" disabled>
+      <input type="button" value="주문하submit" disabled>
+    </form>
+
+  </body>
+</html>
