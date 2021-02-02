@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>메인 페이지</title>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <a id="logo" href="main.html"> SM Bookstore </a>
+        <span class="right" style="padding: 50px 20px;">   <!--padding: 위 아래, 오른쪽 왼쪽--> <!--원래 위, 오른쪽, 아래, 왼쪽 순이다-->
+          <!--target은 링트를 클릭할 때 창을 어떻게 열지 결  -->
+          <a href="login.html" target="display_area">로그인</a>  <!--name="display_area"인 article 부분에 결과 나타남-->
+          <a href="signup.html" target="_blank">회원가입</a>   <!--_blank: 연결 문서를 새 창에 연다. -->
+        </span>                                                <!--target="_self": 연결 문서를 클릭한 창에서 연다(기본값)-->
+        <a id="logo2" href="main.html"> SM Bookstore </a>
+      </header>
+
+      <nav>  <!--CSS에서 #nav { }안에 디자인 설정-->
+        <ul>
+          <li> <a href="domestic_books.html" target="display_area">국내도서</a></li>
+          <li> <a href="foreign_books.html" target="display_area">해외번역도서</a></li>
+          <li> <a href="music.html" target="display_area">음반</a></li>
+          <li class="right"> <a href="order.html" target="display_area">주문하기</a></li>
+        </ul>
+      </nav>
+
+      <hr>
+
+      <article class="left">
+        <iframe src="books.jpg" name="display_area" width="500" height="380"></iframe>
+        <!--width와 height를 지정하지 않으면 스크롤 바와 함께 이미지 일부분만 나타남-->
+        <!--해당 폴더 안에 images 폴더가 있고 그 안에 books 이미지 있다-->
+      </article>
+
+      <aside class="right">
+        <!--readonly와 disabled 차이: form으로 보낼 때 disabled는 전송 X-->
+        <button id="all" style="width: 85px" disabled>전체</button> <br>   <!--disabled: 읽기만 가능, 값 변경 불가능-->
+        <button id="best" style="width: 85px" disabled>베스트셀러</button> <br>
+        <button id="recommand" style="width: 85px" disabled>추천도서</button> <br>
+        <button id="memo" style="width: 85px" disabled>메모하기</button> <br>
+        <button id="location" style="width: 85px" disabled>현재위치</button>
+      </aside>
+
+      <hr>
+      <footer>
+        <div id="copyright">
+          Copyright (c) 2016 SM Bookstore Inc. All rights reserved
+        </div>
+        <div id="Search Engine">
+          <a href="http://naver.com" target="_blank">
+            <img src="images/naver.png" height="32" alt="Facebook">
+          </a>
+          <a href="http://google.com" target="_blank">
+            <img src="images/google.jpeg" height="32" alt="Google">
+          </a>
+        </div>
+      </footer>
+    </div>
+
+  </body>
+</html>
