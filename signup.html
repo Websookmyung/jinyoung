@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>회원가입 페이지</title>
+  </head>
+
+  <body id="signup">
+    <form>
+      <fieldset>  <!--박스 생성-->
+        <legend>회원가입</legend>  <!--박스의 이름-->
+        <span>사용자 아이디</span>
+        <input type="text" id="username"/>
+        <input type="button" id="dup_check" value="중복체크" disabled/> <br>
+        <span>비밀번호</span> <input type="password" id="pass1"> <br>
+        <span>비밀번호 확인</span> <input type="password" id="pass2"> <br>
+        <span>이름</span> <input type="text"> <br>
+        <span>전화번호</span> <input type="tel"> <br>
+        <span>이메일</span> <input type="email"> <br>
+        <span>생일</span> <input type="date"> <br>
+        <span>연령대</span>     <!--span은 div와 같이 특별한 기능 없이 CSS와 함께 쓰임. 단, 줄바꿈X-->
+        <select>
+          <option>10대 이하</option>
+          <option>20대</option>
+          <option>30대</option>
+          <option>40대</option>
+          <option>50대 이하</option>
+        </select> <br>
+        <span>관심분야</span>  <!--label: 복수선택-->
+        <label>인문학 <input type="checkbox" name="interest" value="humanity"></label>
+        <label>교육 <input type="checkbox" name="interest" value="education"></label>
+        <label>예술 <input type="checkbox" name="interest" value="art"></label>
+        <label>컴퓨터 <input type="checkbox" name="interest" value="computer"></label>
+        <label>기타분야 <input type="checkbox" name="interest" value="etc"></label>
+        <br>
+        <span>배경 색상</span> <input type="color"> <br> 간단한 자기소개 <br>
+        <textarea rows="8" cols="80">간단한 자기소개를 써 주세요</textarea>  <!--글 작성 가능-->
+      </fieldset>
+      <input type="submit" id="signup_button" value="회원가입" disabled>
+      <input type="button" id="reset2" value="취소" disabled>
+    </form>
+
+  </body>
+</html>
