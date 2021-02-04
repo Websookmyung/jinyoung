@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script type="text/javascript">
+      var book1="IT: 컴퓨터와 IT기술의 이해";
+      var book2="SNS: 소셜미디어의 이해와 활용";
+      var book3="Multimedia :멀티미디어 배움터 2.0";
+
+      var n =prompt("주문할 책 수량을 입력 하세요.", "1");
+
+      for (i=0; i<n; i++) {
+        var book_list=book1+"\n"+book2+"\n"+book3;
+        var choice=prompt("책 제목을 선책하세요...\n"+book_list, "");
+
+        if (choice=="IT") {
+          title=book1;
+        } else if (choice=="SNS") {
+          title=book2;
+        } else if (choice=="Multimedia") {
+          title=book3;
+        } else {
+          alert ("리스트에 없는 책을 선택했습니다.");
+          title="";
+        }
+
+        document.write("["+(i+1)+"]"+title+"<br>");
+      }
+
+    </script>
+
+  </body>
+</html>
