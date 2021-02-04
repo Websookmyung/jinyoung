@@ -1,0 +1,17 @@
+<table border="1">
+    <script type="text/javascript">
+        document.write("<tr>");
+        document.write("<td> Value </td>");
+        fib1=1;
+        fib2=1;
+        while (fib2 < 1000) {
+            document.write("<td>");
+            document.wirte(fib2);
+            document.write("</td>");
+            tmp=fib1+fib2;
+            fib1=fib2;
+            fib2=tmp;
+        }
+        document.write("</tr>");
+    </script>
+</table>
