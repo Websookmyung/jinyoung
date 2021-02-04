@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <table border="1">
+      <script type="text/javascript">
+        document.write("<tr>");
+        document.write("<td> Value </td>");
+
+        fib1=1;
+        fib2=1;
+        do {
+          document.write("<td>");
+          document.write(fib2);
+          document.write("</td>");
+          tmp=fib1+fib2;
+          fib1=fib2;
+          fib2=tmp;
+        } while (fib2<1000)
+
+        document.write("</tr>");
+      </script>
+    </table>
+  </body>
+</html>
