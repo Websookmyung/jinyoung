@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+
+    <script type="text/javascript">
+      function print_value(name, v) {
+        document.write("Name: "+name+", ");
+        document.write("Value: "+v+"<br>");
+      }
+
+      function add(a, b) {
+        return (a+b);
+      }
+
+      print_value("The title of this book", "HTML 웹프로그래밍입문");
+      print_value("No name");
+      print_value("PI", 3.14);
+      print_value("A", "alpha", "ALPHA");
+
+      result1=add(12, 34);
+      result2=add(56, "78");
+
+      document.write("result1= "+result1+"<br>");
+      document.write("result2= "+result2+"<br>");
+      document.write("11+12= "+add(11, 12)+"<br>");
+      document.write("Steve+Jobs = "+add("Steve", "Jobs")+"<br>");
+      document.write(add(2, 3, 4)+"<br>");
+
+    </script>
+
+  </body>
+</html>
