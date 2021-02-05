@@ -1,0 +1,39 @@
+<p> A Simple Javascript Example for Using Objects <br/> </p>
+<table border="1">
+    <caption> 서적 정보 </caption>
+    <tr> <th>항목 (속성: property)</th> <th>내용 (값: value)</th></tr> 
+
+    <script type="text/javascript">
+        var book=new Object();
+        book.title="멀티미디어 배움터2.0";
+        book.publisher="생능출판사";
+        book.author="최윤철, 임순범";
+        book.price=25000;
+
+        book.info=new Object();
+        book.info.pages=442;
+        book.info.date="2010년 1월 30일";
+        book.info.ISBN10="8970506470";
+        book.info.size="188mm*254mm";
+
+        for (var p in book){
+            if (typeof(book[p]) != "object") {
+                //1차원배열
+                document.write("<tr>");
+                document.write("<td> book." +p+"</td>");
+                document.write("<td> "+book[p]);
+                if (p=="price") document.write("원");
+                document.write("</td>");
+                document.write("</tr>");
+            }
+            else{
+                //2차원배열
+                for (var q in book[p]){
+                    document.write("<tr>");
+                    document.write("<td> book."+p+"."+q+"</td>");
+                    document.write("<td> "+book[p][q]+"</td>");
+                    document.write("</tr>");
+                }
+            }
+        }
+    </script>
