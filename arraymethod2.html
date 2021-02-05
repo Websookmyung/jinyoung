@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    function print_array(a, name){
+        document.write("Size of array: "+a.length+"<br/>");
+        for (i=0;i<a.length;i++){
+            document.write(name + "["+i+"]: ");
+            if (typeof(a[i])=="string")
+                document.write("\""+ a[i] + "\" <br/>");
+            else
+                document.write(a[i] + " <br/>");
+        }
+    }
+
+    var arr=new Array("zero","one",3,"25");
+
+    document.write("Original Array: <br/>");
+    print_array(arr, "arr");
+
+    arr.sort(); //숫자도 문자열로 변환 후 문자열 기준으로 정렬됨
+    document.write("<br/> After sort: <br/>");
+    print_array(arr, "arr");
+
+    var new_arr=arr.concat(4,"five",6);
+    document.write("<br/> After concatenation: <br/>");
+    print_array(new_arr,"new_arr");
+
+    var sliced_arr=arr.slice(2,6);
+    document.write("<br/> After slice: <br/>");
+    print_array(sliced_arr, "sliced_arr");
+</script>
