@@ -1,0 +1,25 @@
+<script type="text/javascript">
+    function print_array(a, name){
+        document.write("Size of array: "+a.length+"<br/>");
+        for (i=0;i<a.length;i++){
+            document.write(name + "["+i+"]: ");
+            if (typeof(a[i])=="string")
+                document.write("\""+ a[i] + "\" <br/>");
+            else
+                document.write(a[i] + " <br/>");
+        }
+    }
+
+    var arr=new Array("zero","one",3,"25");
+
+    document.write("Original Array: <br/>");
+    print_array(arr, "arr");
+
+    arr.reverse(); //배열의 메소드를 호출하면 배열의 내용도 변경됨
+    document.write("<br/> After reverse: <br/>");
+    print_array(arr, "arr");
+
+    var str=arr.join(" = ");
+    document.write("<br/> After join: <br/>");
+    document.write("str: \"" + str + "\"<br/>");
+</script>
