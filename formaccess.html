@@ -1,0 +1,18 @@
+<form name="form1" action="index.html">
+    <input type="text" id="input1" name="" value="value of form">
+  </form>
+
+  <script type="text/javascript">
+    txt=document.getElementById("input1").value;
+    document.write("Access using getElementById: "+txt+"<br>");
+
+    txt=document.form1.input1.value;
+    document.write("Access using form_name.id: "+txt+"<br>");
+
+    txt=document.forms[0].input1.value;
+    document.write("Access using form[index].id: "+txt+"<br>");
+
+    txt=document.forms[0].elements[0].value;
+    document.write("Access using form[index].elements[index]: "+txt+"<br>");
+
+  </script>
