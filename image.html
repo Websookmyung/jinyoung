@@ -1,0 +1,17 @@
+<canvas id="myCanvas" width="600" height="600"></canvas>
+<script type="text/javascript">
+    var canvas=document.getElementById("myCanvas");
+    var myContext=canvas.getContext("2d");
+
+    var imgObj=new Image();
+    imgObj.src="clownfish.jpg";
+
+    imgObj.onload=function(){
+        myContext.drawImage(imgObj,50,50);
+        myContext.drawImage(imgObj,350,50,150,100);
+        myContext.drawImage(imgObj,550,50,100,100);
+
+        myContext.drawImage(imgObj,70,50,70,70,350,180,70,70);
+        myContext.drawImage(imgObj,120,50,100,50,450,180,100,50);
+    }
+</script>
