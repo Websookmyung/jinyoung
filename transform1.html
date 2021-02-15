@@ -1,0 +1,23 @@
+<canvas id="myCanvas" width="600" height="600"></canvas>
+<script type="text/javascript">
+    var canvas=document.getElementById("myCanvas");
+    var myContext=canvas.getContext("2d");
+
+    var imgObj=new Image();
+    imgObj.src="clownfish.jpg";
+
+    imgObj.onload=function(){
+        myContext.drawImage(imgObj,50,50);
+        myContext.translate(300,0);
+        myContext.drawImage(imgObj,50,50);
+
+        myContext.setTransform(1,0,0,1,0,0);
+        myContext.scale(1.2,0.33);
+        myContext.drawImage(imgObj,40,800);
+
+        myContext.setTransform(1,0,0,1,0,0);
+        myContext.translate(750,0);
+        myContext.rotate(Math.PI/4);
+        myContext.drawImage(imgObj,0,0);
+    }
+</script>
