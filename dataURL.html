@@ -1,0 +1,24 @@
+<canvas id="myCanvas" width="600" height="600"></canvas>
+<script type="text/javascript">
+    var canvas=document.getElementById("myCanvas");
+    var myContext=canvas.getContext("2d");
+
+    myContext.rect(0,0,400,200);
+    myContext.fillStyle="grey";
+    myContext.fill();
+
+    var text1="HTML5 Text Drawing!";
+
+    myContext.font="24pt Tahoma";
+    myContext.fillStyle="red";
+    myContext.textAlign="left";
+    myContext.fillText(text1,50,50);
+
+    myContext.lineWidth=1;
+    myContext.font="32pt San Serif";
+    myContext.fillStyle="blue";
+    myContext.strokeText("lineWidth=1",100,150);
+
+    var dataURL=canvas.toDataURL();
+    document.getElementById("canvasImage").src=dataURL;
+</script>
