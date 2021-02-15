@@ -1,0 +1,33 @@
+<canvas id="myCanvas" width="600" height="600"></canvas>
+<script type="text/javascript">
+    var canvas=document.getElementById("myCanvas");
+    var myContext=canvas.getContext("2d");
+
+    myContext.beginPath();
+    myContext.rect(20,20,50,80);
+    myContext.lineWidth=20;
+    myContext.strokeStyle="black";
+    myContext.lineJoin="miter";
+    myContext.fillStyle="grey";
+    myContext.stroke();
+    myContext.fill();
+
+    myContext.beginPath();
+    myContext.rect(110,20,50,80);
+    myContext.lineWidth=20;
+    myContext.strokeStyle="black";
+    myContext.lineJoin="round";
+    myContext.fillStyle="pink";
+    myContext.stroke();
+    myContext.fill();
+    
+    myContext.beginPath();
+    myContext.rect(200,20,50,80);
+    myContext.lineWidth=20;
+    myContext.strokeStyle="black";
+    myContext.lineJoin="bevel";
+    myContext.fillStyle="yellow";
+    myContext.stroke();
+    myContext.fill();
+
+</script>
