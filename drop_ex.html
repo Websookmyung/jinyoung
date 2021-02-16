@@ -1,0 +1,31 @@
+<body>
+    <div id="dragsrc" style="margin-bottom:20px; display: block;">
+        <img  id="html5" src="H5_logo.gif" style="display: inline; width:150px;" draggable="true"> 
+        <img  id="css3" src="CSS3_logo.gif" style="display: inline; width:150px;" draggable="false"> 
+        <img  id="clownfish" src="clownfish.JPG" style="display: inline; width:150px;"> 
+    </div>
+    <div id="droptarget" style="border-color:gray; border-style:solid;">드롭영역 <br> Drop here</div>
+
+    <script type="text/javascript">
+        var src=document.getElementById("dragsrc"),
+        srcId,
+        target=document.getElementById("droptarget");
+
+        src.ondragstart=function(e){
+            srcId=e.target.id;
+            e.dataTransfer.setData("text",srcId);
+        }
+
+        target.ondragenter=function(e){
+            dropId=e.target.id;
+        }
+
+        target.ondragover=function(e){
+            e.preventDefault();
+        }
+        target.ondrop=function(e){
+            var data=e.dataTransfer.getData("text");
+            e.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
