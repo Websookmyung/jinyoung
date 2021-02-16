@@ -1,0 +1,27 @@
+<body>
+    <div id="dragsrc" style="display: block;">
+        <img  id="html5" src="H5_logo.gif" style="display: inline; width:150px;" draggable="true"> 
+        <img  id="html5" src="H5_logo.gif" style="display: inline; width:150px;" draggable="false"> 
+        <img  id="html5" src="H5_logo.gif" style="display: inline; width:150px;"> 
+    </div>
+    <div id="dragprocess"></div>
+
+    <script type="text/javascript">
+        var src=document.getElementById("dragsrc"),
+        srcId, i=0;
+        process=document.getElementById("dragprocess");
+
+        src.ondragstart=function(e){
+            srcId=e.target.id;
+            process.innerHTML="start: "+srcId+"<br/>";
+        }
+
+        src.ondrag=function(e){
+            process.innerHTML="start: "+srcId+"<br/>drag: "+srcId+" ["+(i++)+"]";
+        }
+
+        src.ondragend=function(e){
+            process.innerHTML += "<br/>end: "+srcId+"<br/>";
+        }
+    </script>
+</body>
