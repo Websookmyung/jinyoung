@@ -1,0 +1,59 @@
+<body onload="pageload();">
+    <h3>로컬 스토리지를 이용한 간단한 목록 작성</h3>
+    <div style="width:540px; height:45px; padding:8px; border:double">
+        이메일 주소 입력 <br>
+        성명: <input type="text" size="10" id="name"> &nbsp;
+        이메일: <input type="text" size="30" id="email"> &nbsp;
+                <input type="button" value="추가" onclick="SaveItem()">
+    </div>
+
+    <p style="margin:10px">이메일 목록 보기</p>
+    <div style="background-color:#d0f0ff; width:540px; height:55px; padding:8px;">
+        성명선택: <select id="nameList" style="width:100px" onchange="viewContent()"></select>
+        이메일: <span id="emailAddr">&nbsp;</span> <br><br>
+        <input type="button" value="삭제" onclick="RemoveItem()" style="margin-top:8px">
+        <input type="button" value="전체삭제" onclick="ClearAll()">
+    </div>
+
+    <script type="text/javascript">
+        var sessionStorage=window.sessionStorage;
+        var itemList=document.getElementById("nameList");
+        var itemAddr=document.getElementById("emailAddr");
+        var u_name=document.getElementById("name");
+        var u_email=document.getElementById("email");
+
+        if (!sessionStorage){
+            alert("세션 스토리지를 지원하지 않습니다.");
+        }
+
+        function pageload(){
+            itemList.innerHTML="";
+            itemAddr.innerHTML="";
+            for (var i=0; i<=sessionStorage.length-1; i++){
+                var key=sessionStorage.key(i);
+                itemList.options[itemList.options.length]=new Option(key, key);
+            }
+        }
+
+        function SaveItem(){
+            sessionStorage.setItem(u_name.value, u_email.value);
+            pageload();
+        }
+
+        function RemoveItem(){
+            var option_key=itemList.options[itemList.selectedIndex].value;
+            sessionStorage.removeItem(option_key);
+            pageload();
+        }
+
+        function ClearAll(){
+            sessionStorage.clear();
+            pageload();
+        }
+
+        function viewContent(){
+            var option_key=itemList.options[itemList.selectedIndex].value;
+            itemAddr.innerHTML=sessionStorage.getItem(option_key);
+        }
+    </script>
+</body>
