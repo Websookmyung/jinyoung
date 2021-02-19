@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title> Show Google Map with a Marker at Current Location</title>
+        <script type="text/javascript">
+            var maptype;
+            function showCurrentLocation(type){
+                if (navigator.geolocation){
+                    if (type=='roadmap'){ //roadmap 클릭시
+                        maptype='roadmap';
+                    } else if (type=='satellite'){ //satellite 클릭시
+                        maptype='satellite';
+                    } else if (type=='terrain'){ //terrain 클릭시
+                        maptype='terrain';
+                    }
+                    navigator.geolocation.getCurrentPosition(getPosition);
+                }
+                else{
+                    document.write("This web browser dos not support geolocation");
+                }
+            }
+
+            function getPosition(p){
+                var currentLat=p.coords.latitude;
+                var currentLng=p.coords.longitude;
+                showMap(currentLat,currentLng);
+            }
+
+            function showMap(lat,lng){
+                var url="http://maps.googleapis.com/maps/api/staticmap?" + "center=" +lat + "," +lng+
+                        "&size=600x500" + "&maptype="+maptype+"&zoom=15"+"&markers=color:blue|"+lat+","+lng+
+                        "&sensor=true"+"&key=AIzaSyB2jPf4peQvSa_amizCXSHxKskHS4IJ-ic";
+                document.body.style.backgroundImage="url("+url+")";
+            }
+
+        </script>
+    </head>
+
+    <body onload="showCurrentLocation();">
+        <button onclick="showCurrentLocation('roadmap');">Roadmap</button>
+        <button onclick="showCurrentLocation('satellite');">Satellite</button>
+        <button onclick="showCurrentLocation('terrain');">Terrain</button>
+    </body>
+</html>
