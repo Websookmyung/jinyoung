@@ -50,6 +50,25 @@
         </span>
 
     </form>
-
+    <script type="text/javascript">
+        function save_favorite(){
+            var localStorage=window.localStorage;
+            if (!localStorage){
+                //local storage is not supported by this browser.
+                //do nothing
+            }
+            else{
+                dom=document.getElementsByTagName("span");
+                var j=0;
+                for (i=0; i<dom.length; i++){
+                    if (dom[i].firstChild.checked==true){
+                        localStorage[j]=dom[i].innerText;
+                        j++;
+                    }
+                }
+                localStorage.numFavorites=j;
+            }
+        }
+    </script>
     <button onclick="save_favorite();"> 관심 도서 등록 </button>
 </body>
