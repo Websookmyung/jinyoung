@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript">
+            function view_favorite(){
+                var localStorage=window.localStorage;
+                if (!localStorage){
+                    //local storage is not supported by this browser.
+                    //do nothing.
+                }else{
+                    var numFavorites=localStorage.numFavorites;
+                    var dom=document.getelementById("favorite_list");
+                    for (i=0; i<numFavorites;i++){
+                        dom.innerHTML = dom.innerHTML + "<li>" +localStorage[i] +"</li>\n";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body class="booklist" onload="view_favorite();">
+        <p class="head"> 관심 도서 목록</p>
+        <ol id="favorite_list">
+        </ol>
+    </body>
+</html>
